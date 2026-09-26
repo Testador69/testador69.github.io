@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macros (Script) — SS KeyMouse Pro</title>
+  <meta name="description" content="Tutorial do Script do SS KeyMouse Pro: tap, swipe, hold, loop e exemplos de macros." />
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.svg" alt="" width="40" height="40" />
+        <span>Sousa Santos Logic<small>SS KeyMouse Pro</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="./">Guias</a>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.sousasantoslogic.sspro" target="_blank" rel="noopener">Play Store</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container guide-layout">
+    <aside class="guide-nav" aria-label="Guias">
+      <h2>Guias</h2>
+      <a href="./">Visão geral</a>
+      <a href="ativar.html">Ativar o mapeador</a>
+      <a class="active" href="macros.html">Macros (Script)</a>
+      <a href="faq.html">FAQ</a>
+      <a href="../privacidade.html">Privacidade</a>
+      <a href="../exclusao-conta.html">Excluir conta</a>
+    </aside>
+    <article class="guide-body">
+      <h1>Macros (Script)</h1>
+      <p class="meta">Uma tecla dispara uma sequência de toques e movimentos — no estilo dos macros de emulador.</p>
+
+      <h2>Como criar</h2>
+      <ol>
+        <li>No HUD, arraste o componente <strong>Script</strong> da bandeja para o mapa.</li>
+        <li>Abra a <strong>engrenagem</strong> → escolha a tecla → edite o texto (ou use <strong>Capturar</strong>).</li>
+        <li>No jogo, pressione a tecla para rodar a sequência.</li>
+      </ol>
+      <p>As coordenadas são em <strong>% da tela (0–100)</strong>, não em pixels — assim o mesmo script funciona em resoluções diferentes.</p>
+
+      <div class="callout"><strong>Soltar a tecla:</strong> macros só com <code>tap</code> / <code>wait</code> / <code>swipe</code> terminam sozinhas. Se tiver <code>repeat</code>, <code>loop</code> infinito, <code>hold</code> ou <code>cursorMove</code>, soltar a tecla <strong>aborta</strong> na hora.</div>
+
+      <h2>Comandos principais</h2>
+      <h3>tap — toque rápido</h3>
+      <pre>tap 85 50
+tap 80 40 80 55
+tap 70 30 75 30 80 30 120</pre>
+      <p>Se a quantidade de números for ímpar, o último é o delay entre toques (ms). Padrão: 50 ms.</p>
+
+      <h3>wait — pausa</h3>
+      <pre>tap 50 50
+wait 200
+tap 60 50</pre>
+
+      <h3>swipe — arrasto</h3>
+      <pre>swipe 20 50 80 50
+swipe 30 70 70 70 500</pre>
+
+      <h3>hold / mouseUp — segurar o dedo</h3>
+      <pre>hold 88 45
+wait 300
+mouseUp</pre>
+
+      <h3>cursorMove — puxar a mira</h3>
+      <pre>cursorMove left 30
+cursorMove up</pre>
+      <p>Continua enquanto a tecla do Script estiver pressionada.</p>
+
+      <h3>repeat e loop</h3>
+      <pre>tap 82 68
+wait 80
+repeat
+
+loop 3
+  tap 80 50
+  wait 100
+loopEnd</pre>
+
+      <h2>Exemplos prontos</h2>
+      <h3>Toque simples</h3>
+      <pre>tap 85 72</pre>
+      <h3>Abrir e confirmar</h3>
+      <pre>tap 78 65
+wait 100
+tap 82 70</pre>
+      <h3>Spam enquanto segura</h3>
+      <pre>tap 90 55
+wait 60
+repeat</pre>
+
+      <h2>Dicas</h2>
+      <ul>
+        <li>Capture os pontos no aparelho e ajuste fino no texto.</li>
+        <li>Mire o centro dos botões, não a borda.</li>
+        <li>Linhas com <code>#</code> são comentários.</li>
+        <li>Não use a mesma tecla em Script e em outro componente ao mesmo tempo.</li>
+      </ul>
+      <p><a href="ativar.html">← Voltar: ativar o mapeador</a> · <a href="faq.html">FAQ →</a></p>
+    </article>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <div><strong style="color:var(--text)">Sousa Santos Logic</strong><br />suporte@keymouse.com.br</div>
+      <div class="footer-links">
+        <a href="../privacidade.html">Privacidade</a>
+        <a href="../exclusao-conta.html">Excluir conta</a>
+        <a href="mailto:suporte@keymouse.com.br">Suporte</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

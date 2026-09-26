@@ -166,3 +166,43 @@ footer {
   .hero-grid, .grid-3, .panel { grid-template-columns: 1fr; }
   .nav-links .hide-sm { display: none; }
 }
+
+/* Guide pages */
+.guide-layout { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; padding: 2rem 0 4rem; align-items: start; }
+.guide-nav {
+  position: sticky; top: 5rem;
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 16px; padding: 1rem;
+}
+.guide-nav h2 { margin: 0 0 .75rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.guide-nav a { display: block; padding: .45rem .55rem; border-radius: 8px; color: var(--muted); font-size: .9rem; margin-bottom: .15rem; }
+.guide-nav a:hover, .guide-nav a.active { background: rgba(139,92,246,.15); color: var(--text); }
+.guide-body h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 .5rem; }
+.guide-body .meta { color: var(--muted); margin: 0 0 1.5rem; }
+.guide-body h2 { font-size: 1.15rem; margin: 1.75rem 0 .6rem; color: #c4b5fd; }
+.guide-body h3 { font-size: 1rem; margin: 1.2rem 0 .4rem; }
+.guide-body p, .guide-body li { color: #c8d0e0; }
+.guide-body ol, .guide-body ul { padding-left: 1.2rem; }
+.guide-body li { margin: .4rem 0; }
+.guide-body pre, .guide-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .85rem;
+}
+.guide-body pre {
+  background: #0a0d16; border: 1px solid var(--card-border);
+  border-radius: 12px; padding: 1rem 1.1rem; overflow-x: auto;
+  color: #e2e8f0; line-height: 1.45;
+}
+.guide-body .callout {
+  margin: 1rem 0; padding: .9rem 1rem; border-radius: 12px;
+  background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.28);
+  color: #ddd6fe; font-size: .92rem;
+}
+.guide-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.25rem; }
+@media (max-width: 880px) {
+  .guide-layout { grid-template-columns: 1fr; }
+  .guide-nav { position: static; display: flex; flex-wrap: wrap; gap: .35rem; }
+  .guide-nav h2 { width: 100%; }
+  .guide-nav a { margin: 0; }
+  .guide-cards { grid-template-columns: 1fr; }
+}
